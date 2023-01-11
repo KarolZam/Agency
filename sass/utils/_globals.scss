@@ -28,19 +28,6 @@ body {
     padding: 0 15px;
 }
 
-.is-active {
-    &::after {
-        content: "";
-        position: absolute;
-        height: 4px;
-        width: 100%;
-        background-color: var(--blue);
-        left: 0;
-        bottom: -32px;
-        border-radius: 2px;
-    }
-}
-
 .portfolio-main {
     padding: 94px 0;
 }
