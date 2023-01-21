@@ -1,18 +1,30 @@
 .clients {
-    padding: 94px 0;
-    &__header {
-        font-size: 36px;
-        font-weight: 700;
-        line-height: 42px;
-        letter-spacing: 0.03em;
-        color: $dark-grey;
-        text-align: center;
+    display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    .clients__list-item {
+        @media (min-width: $detskop-size) {
+            flex-basis: calc((100% - 2rem) / 6);
+            max-width: 170px;
+        }
     }
+    
     &__icons-box {
-        display: inline-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
         gap: 30px;
-        margin-top: 50px;
-        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     &__icon {
         border: 1px solid $icon-grey;
@@ -20,7 +32,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        fill: #afb1b8;
+        fill: $icon-grey;
         padding: 16px 32px;
         transition-property: fill, border-color;
         transition-duration: 250ms;
@@ -30,5 +42,12 @@
             --color1: #2196f3;
             border-color: $blue;
         }
+    }
+}
+
+@media (min-width: $detskop-size) {
+    .clients__list-item {
+        flex-basis: calc((100% - 2rem) / 6);
+        max-width: 170px;
     }
 }

@@ -1,5 +1,7 @@
 @use 'utils/vars' as *;
 @use 'utils/globals' as *;
+@use 'utils/section' as *;
+@import "../sass/utils/container";
 @import './components/page-header';
 @import './components/banner';
 @import './components/modal';
@@ -11,4 +13,4 @@
 @import './components/footer';
 @import './components/filter-buttons';
 @import './components/projects';
-
+@import './components/menu';
