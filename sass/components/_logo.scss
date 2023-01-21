@@ -7,6 +7,10 @@
     line-height: 31px;
     text-align: center;
 
+    &--header {
+        margin-right: 83px;
+    }
+
     &--blue {
         color: $blue;
     }

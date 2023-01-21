@@ -1,0 +1,105 @@
+.menu {
+    position: fixed;
+    display: none;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    padding: 2rem;
+    background-color: $white;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+
+    &__toggle {
+        position: absolute;
+        top: 1.375rem;
+        right: 1.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: $black;
+        @media (min-width: $tablet-size) {
+            display: none;
+        }
+    }
+
+    &__icon-close {
+        fill: currentColor;
+        display: inline-block;
+        &:hover {
+            fill: $blue;
+        }
+    }
+
+    &__container {
+        height: 100%;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    &__nav {
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__nav-link {
+        text-decoration: none;
+        color: $dark-grey;
+        font-weight: 500;
+        font-size: 40px;
+        &:hover {
+            color: $blue;
+        }
+    }
+
+    &__link {
+        color: $blue;
+        letter-spacing: 0.02em;
+        font-size: 2.5rem;
+        line-height: 1.175;
+        text-decoration: none;
+    }
+    &__email {
+        color: $light-grey;
+        font-size: 1.5rem;
+        color: $light-grey;
+        letter-spacing: 0.02em;
+        line-height: 1.16;
+        text-decoration: none;
+    }
+
+    &__social {
+        display: inline-block;
+        display: flex;
+        gap: 10px;
+        &__link {
+            border-right: 1px solid rgba(33, 33, 33, 0.2);
+            padding-right: 10px;
+            color: #2196f3;
+            letter-spacing: 2%;
+            font-size: 18px;
+            line-height: 22px;
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+}
+
+.menu.is-open {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+    display: block;
+}

@@ -3,6 +3,14 @@
     padding: 0;
 }
 
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
     --blue: #2196f3;
     --dark-grey: #212121;
@@ -17,15 +25,15 @@ body {
     font-family: Roboto;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
 .list {
     list-style-type: none;
     padding-left: 0;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
 }
 
 .portfolio-main {
@@ -37,6 +45,6 @@ body {
     padding-bottom: 25px;
 }
 
-.section {
-    padding-top: 94px;
-}
+
+
+

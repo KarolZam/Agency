@@ -1,8 +1,28 @@
-.text-list {
-  display: flex;
-  gap: 30px;
-  padding: 0;
+.adventages {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+  }
 
+
+  .adventages__item {
+    @media (min-width: $tablet-size) {
+      flex-basis: calc((100% - 2rem) / 2);
+    }
+
+    @media (min-width: $detskop-size) {
+      flex-basis: calc((100% - 2rem) / 4);
+      max-width: 270px;
+    }
+  }
+}
+
+
+
+
+.text-list{
   &__icon {
     display: flex;
     justify-content: center;
