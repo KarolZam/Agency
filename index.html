@@ -90,7 +90,7 @@
     </header>
     <main>
       <section class="banner section__backdrop">
-        <div class="container__backdrop container">
+        <div class="container container__backdrop">
           <h1 class="banner__header">
             Efektywne rozwiązania<br />
             dla waszego biznesu
@@ -523,11 +523,9 @@
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button type="button" class="modal__closing-button" data-modal-close>
-          <img
-            src="./images/close-button.svg"
-            alt="closing button"
-            width="18"
-          />
+          <svg class="modal__close-icon">
+            <use href="./images/icons-modal.svg#icon-modal-close"></use>
+          </svg>
         </button>
         <form
           class="modal__form"

@@ -1,5 +1,4 @@
 .input {
-    width: 448px;
     font-size: 12px;
     font-size: 12px;
     border-radius: 4px;
@@ -32,13 +31,28 @@
 }
 
 .modal {
-    width: 528px;
-    height: 581px;
-    position: relative;
-    cursor: initial;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: $white;
-    box-shadow: 0px 1px 3px #0000001f, 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px $shadow;
+    box-shadow: 0px 2px 1px 0px;
+    box-shadow: 0px 1px 1px 0px;
+    box-shadow: 0px 1px 3px 0px;
     border-radius: 4px;
+    padding: 40px;
+
+    @media screen and (max-width: 1199px) {
+        width: 95%;
+        max-width: 450px;
+        height: 95%;
+        max-height: 609px;
+        overflow: scroll;
+    }
+    @media screen and (min-width: 1200px) {
+        width: 528px;
+        height: 581px;
+    }
 
     &__form-label:hover > &__form-svg {
         fill: $blue;
@@ -66,11 +80,21 @@
 
         &:hover {
             cursor: pointer;
-            background-color: lightgrey;
+        }
+        &:hover > .modal__close-icon{
+            fill: #2196f3;
         }
     }
+
+
+    &__close-icon {
+        fill: #000000;
+        width: 11px;
+        height: 11px;
+        position: inherit;
+    }
+
     &__form {
-        margin: 40px;
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
@@ -86,12 +110,16 @@
         margin-bottom: 12px;
     }
     &__form-label {
+        display: flex;
+        flex-direction: column;
         position: relative;
-        display: block;
-        margin-bottom: 10px;
+        font-size: 12px;
+        line-height: 1.16;
+        letter-spacing: 0.01em;
+        color: $light-grey;
+        margin-top: 10px;
     }
     &__form-svg {
-        fill: currentColor;
         position: absolute;
         left: 14px;
         top: 50%;
@@ -107,9 +135,9 @@
     }
 
     &__form-input {
+        padding-left: 42px;
         display: inline-block;
         height: 40px;
-        padding-left: 42px;
         @extend .input;
         &:hover,
         &:focus {
@@ -122,10 +150,13 @@
     }
 
     &__form-comment-input {
-        box-sizing: border-box;
+        width: 100%;
         height: 120px;
         padding: 12px 16px;
         font-weight: 400;
+        resize: none;
+        margin-bottom: 20px;
+        margin-top: 10px;
         @extend .input;
         &::placeholder {
             color: #75757580;
@@ -139,36 +170,39 @@
     }
     &__privacy {
         position: relative;
-        left: 14px;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-        margin-top: 20px;
-        margin-bottom: 30px;
+        display: inline-flex;
+        margin-bottom: 31px;
     }
     &__privacy-checkbox-none {
         display: none;
         opacity: 0;
     }
     &__privacy-checkbox {
-        display: flex;
         position: absolute;
-        left: 0px;
+        left: 0;
         transition-duration: 250ms;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         fill: $white;
         border: 1px solid $black;
         border-radius: 2px;
-        margin: auto;
     }
     &__privacy-checkbox-none:checked + &__privacy-checkbox {
         background-color: $blue;
         border-color: $blue;
     }
     &__privacy-text {
-        font-size: 14px;
-        color: $light-grey;
+        padding-left: 26px;
+        @media (max-width: $tablet-size) {
+            font-size: 12px;
+            line-height: 1.16em;
+            letter-spacing: 0.03em;
+        }
+        @media (min-width: $detskop-size) {
+            font-size: 14px;
+            line-height: 1.71em;
+            letter-spacing: 0.03em;
+            vertical-align: text-top;
+        }
     }
     &__privacy-link {
         color: $blue;
