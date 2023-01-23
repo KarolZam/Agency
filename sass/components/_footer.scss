@@ -154,7 +154,7 @@
         min-width: 290px;
         margin-bottom: 20px;
 
-        @media (min-width: $mobile-size) {
+        @media (min-width: 479px) {
             width: 450px;
         }
 
